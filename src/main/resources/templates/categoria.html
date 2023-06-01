@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Categoria</title>
+</head>
+<h1>Categoria gg</h1>
+
+
+ <div th:replace="~{footer.html}"></div>
+
+
+
+	<h1 id="title">Tecnología</h1>
+	<!--  <div th:replace="~{carrousel.html}"></div>-->
+
+	<div class="grid-container">
+		<div class="grid-item" th:each="producto : ${productos}"
+			th:data-id="${producto.id}">
+			<div class="img-container">
+				<img th:src="${producto.imagen}" alt="Imagen de producto"
+					loading="lazy">
+			</div>
+			<h3 class="product-title" th:text="${producto.nombre}"></h3>
+			<p class="product-price" th:text="${producto.precio +'€'}"></p>
+			<p class="product-description" th:text="${producto.descripcion}"></p>
+			<a href="#" class="product-button">Añadir al carrito</a>
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>

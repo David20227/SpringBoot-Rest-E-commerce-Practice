@@ -1,0 +1,119 @@
+#title {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+img {
+	pointer-events: none;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-gap: 10px;
+	margin-left: 20%;
+	margin-right:20%;
+	justify-content: center;
+}
+
+.grid-item {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 20px;
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 20px;
+}
+
+.grid-item:hover {
+	cursor: pointer;
+}
+
+.img-container {
+	width: 100%;
+	height: 50%;
+	margin-bottom: 10px;
+}
+
+.img-container>img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.product-title {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.product-price {
+	color: #c45500;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.product-description {
+    max-height: 100px; /* Ajusta la altura máxima según tus necesidades */
+    overflow: hidden; /* Oculta el contenido que excede la altura máxima */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se trunca */
+    white-space: nowrap; /* Evita que el texto se envuelva a la siguiente línea */
+}
+
+.product-button {
+	display: inline-block;
+	background-color: #c45500;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+.product-button:hover {
+	background-color: #a34300;
+	color: white;
+	text-decoration: none;
+}
+
+
+/*Barra de busqueda */
+
+.product-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.generated-row:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+
+/* Estilo para el cursor pointer */
+.grid-item {
+  cursor: pointer;
+}
+/*Carrito*/
+
+table{position:absolute; width:20%;}
+
+
+
+/*sidenav*/
+
+.container-fluid{
+	position:absolute;
+	z-index:2;
+	top:6vh;
+	left:85%;
+	display:none;
+}
+
+
+
+
+
+
+
+
+

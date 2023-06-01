@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8">
+<title>Listado estudiantes</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}">Index</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active"><a class="nav-link"
+					th:href="@{/estudiantes}">Estudiantes <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/estudiantes/nuevo}">Crear Estudiante</a></li>
+				<li class="nav-item"><a class="nav-link " href="#">Otro</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<br>
+
+
+	<div class="container ">
+		<div class="row text-left">
+			<h1>Lista de Estudiantes</h1>
+		
+			
+
+				<a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm" style="height:30px; margin-top:1em;">Añadir estudiante</a>
+				
+				
+			
+			<br>
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+
+
+						<th scope="col">Nombre</th>
+						<th scope="col">Apellido</th>
+						<th scope="col">Email</th>
+						<th scope="col">Acción</th>
+						<th scope="col"></th>
+						
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="estudiante : ${estudiantes}">
+
+						<td th:text="${estudiante.nombre}">Nombre</td>
+						<td th:text="${estudiante.apellido}">Apellido</td>
+						<td th:text="${estudiante.email}">email</td>
+						<td><a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a></td>
+						<td><a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a></td>
+						
+					</tr>
+
+				</tbody>
+				
+				<tfoot>
+				<tr>
+	<td>			
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-left">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</td>
+</tr>
+</tfoot>
+			</table>
+
+		</div>
+
+	</div>
+	
+</body>
+</html>
